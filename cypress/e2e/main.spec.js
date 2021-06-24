@@ -11,7 +11,6 @@ describe("IndexPage", () => {
     cy.get("#hero").should("exist")
     cy.get("#articles").should("exist")
     cy.get("#about").should("exist")
-    cy.get("#interests").should("exist")
     cy.get("#projects").should("exist")
     cy.get("#contact").should("exist")
   })
@@ -36,14 +35,9 @@ describe("IndexPage", () => {
     cy.get("#layout-wrapper").then(elem => {
       if (elem.attr("data-useCookieBar") === "true") {
         cy.get("button#confirm").click()
-        cy.findByTestId("footer-links")
-          .findByText(/imprint/i)
-          .click()
+
         cy.findByTestId("heading").should("exist")
       } else {
-        cy.findByTestId("footer-links")
-          .findByText(/imprint/i)
-          .click()
         cy.findByTestId("heading").should("exist")
       }
     })
