@@ -98,7 +98,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       right: 2.5rem;
       font-size: 1.125rem;
       font-weight: 500;
-      @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+      @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
         display: none;
       }
     }
