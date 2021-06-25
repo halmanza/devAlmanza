@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { motion, useAnimation } from "framer-motion"
-import { sharedPreferences,darkTheme } from "../../styles/theme"
+import { sharedPreferences } from "../../styles/theme"
 import { useOnScreen } from "../../hooks/"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
@@ -36,6 +36,10 @@ const StyledContentWrapper = styled(ContentWrapper)`
       flex-direction: column;
       justify-content: center;
     }
+    .text-content h3{
+      text-align:center;
+    }
+    
     .text-content {
       width: 100%;
       max-width: 31.25rem;
@@ -47,6 +51,10 @@ const StyledContentWrapper = styled(ContentWrapper)`
       @media(prefers-color-scheme:dark){
         color:black;
         background:lightgrey;
+        h3{
+          text-align:center;
+          color:black;
+        }
       }
 
       @media (max-width: ${({theme})=>theme.breakpoints.xs}){
