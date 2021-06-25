@@ -41,8 +41,8 @@ const StyledSocialWrapper = styled.div`
     display:flex;
     flex-direction:column;
     justify-content: center;
-    margin:0;
     align-items:center;
+   
   }
   
 
