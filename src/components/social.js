@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
+import styled, { ThemeConsumer } from "styled-components"
 
 import Context from "../context"
 import Icon from "./icons"
@@ -13,25 +13,38 @@ const StyledSocialWrapper = styled.div`
   grid-template-columns: repeat(${({ itemCount }) => itemCount + 1}, auto);
   justify-content: center;
   justify-items: center;
-
   margin-left: 0rem;
   margin-right: -2.5rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-
   overflow-x: scroll;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
     display: none;
   }
-  @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.xxs}) {
  display:flex;
  flex-direction:column;
  justify-content: center;
  margin:0;
  align-items:center;
   }
+  @media (max-width: ${({theme})=> theme.breakpoints.xs}){
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    margin:0;
+    align-items:center;
+  }
+  @media (max-width: ${({theme})=>theme.breakpoints.modern}){
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    margin:0;
+    align-items:center;
+  }
+  
 
   /* Workaround: https://stackoverflow.com/questions/38993170/last-margin-padding-collapsing-in-flexbox-grid-layout */
   &::after {
@@ -69,6 +82,7 @@ const StyledSocialWrapper = styled.div`
     @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
       margin-right: 1rem;
     }
+
   }
 `
 

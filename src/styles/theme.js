@@ -5,6 +5,7 @@ export const sharedPreferences = {
   breakpoints: {
     xxs: "320px",
     xs:"375px",
+    modern:"414px",
     sm: "768px",
     md: "992px",
     lg: "1200px",
