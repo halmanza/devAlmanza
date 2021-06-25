@@ -4,10 +4,11 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { motion, useAnimation } from "framer-motion"
-import { sharedPreferences } from "../../styles/theme"
+import { sharedPreferences,darkTheme } from "../../styles/theme"
 import { useOnScreen } from "../../hooks/"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
+
 
 const StyledSection = styled.section`
   width: 100%;
@@ -41,8 +42,13 @@ const StyledContentWrapper = styled(ContentWrapper)`
       padding:1.5rem;
       background:lavender;
       border-radius:29% 12%;
-      
-      text-align:center;
+      text-align:left;
+
+      @media(prefers-color-scheme:dark){
+        color:black;
+        background:lightgrey;
+      }
+
       @media (max-width: ${({theme})=>theme.breakpoints.xs}){
         border-radius:5%;
         padding:.5rem;
