@@ -47,6 +47,7 @@ const StyledContentWrapper = styled(ContentWrapper)`
       background:lavender;
       border-radius:29% 12%;
       text-align:left;
+      list-style:none;
 
       @media(prefers-color-scheme:dark){
         color:black;
