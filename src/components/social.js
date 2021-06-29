@@ -27,19 +27,21 @@ const StyledSocialWrapper = styled.div`
  display:flex;
  flex-direction:column;
  justify-content: center;
- margin:0;
+ margin-left:1rem;
+ margin-right:-2rem;
  align-items:center;
   }
   @media (max-width: ${({theme})=> theme.breakpoints.xs}){
     display:flex;
     flex-direction:column;
     justify-content: center;
-    margin:0;
+    margin:1rem;
     align-items:center;
   }
   @media (max-width: ${({theme})=>theme.breakpoints.modern}){
     display:flex;
     flex-direction:column;
+    margin-right:-.5rem;
     justify-content: center;
     align-items:center;
    
