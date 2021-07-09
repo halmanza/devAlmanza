@@ -35,7 +35,7 @@ const StyledSocialWrapper = styled.div`
     display:flex;
     flex-direction:column;
     justify-content: center;
-    margin:1rem;
+    margin:0;
     align-items:center;
   }
   @media (max-width: ${({theme})=>theme.breakpoints.modern}){
