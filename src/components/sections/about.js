@@ -9,7 +9,6 @@ import { useOnScreen } from "../../hooks/"
 import Context from "../../context/"
 import ContentWrapper from "../../styles/contentWrapper"
 
-
 const StyledSection = styled.section`
   width: 100%;
   height: auto;
@@ -24,10 +23,11 @@ const StyledContentWrapper = styled(ContentWrapper)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    @media (min-width: ${( ) => sharedPreferences.breakpoints.sm}) {
+    @media (min-width: ${() => sharedPreferences.breakpoints.sm}) {
       flex-direction: row;
       justify-content: space-between;
     }
+
     .section-title {
       margin-bottom: 2rem;
     }
@@ -36,37 +36,45 @@ const StyledContentWrapper = styled(ContentWrapper)`
       flex-direction: column;
       justify-content: center;
     }
-    .text-content h3{
-      text-align:center;
+    .text-content h3 {
+      text-align: center;
     }
-    
+    .text-content ul > li {
+      margin: 0.5rem;
+      padding: 0.2rem;
+    }
+    .text-content ul {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      font-weight:bold;
+
+      @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
+        display: flex;
+        flex-direction: column;
+      }
+      @media (max-width: ${({ theme }) => theme.breakpoints.modern}) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
     .text-content {
       width: 100%;
       max-width: 31.25rem;
-      padding:1.5rem;
-      background:lavender;
-      border-radius:29% 12%;
-      text-align:left;
-      list-style:none;
+      padding: 1.5rem;
+      background: ${({ theme }) => theme.color};
+      text-align: left;
 
-      @media(prefers-color-scheme:dark){
-        color:black;
-        background:lightgrey;
-        h3{
-          text-align:center;
-          color:black;
-        }
+      @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
+        border-radius: 10px;
+        padding: 0.5rem;
       }
-
-      @media (max-width: ${({theme})=>theme.breakpoints.xs}){
-        border-radius:5%;
-        padding:.5rem;
+      @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+        border-radius: 10px;
+        padding: 1.5rem;
       }
-      @media (max-width: ${({theme})=>theme.breakpoints.sm}){
-        border-radius:29% 12%;
-        padding:1.5rem;
-      }
-    
+     
     }
     .image-content {
       width: 100%;
@@ -87,7 +95,6 @@ const StyledContentWrapper = styled(ContentWrapper)`
         transform: translate3d(0px, -0.125rem, 0px);
         box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.32);
       }
-     
     }
   }
 `
